@@ -12,18 +12,16 @@ class UserProfileManager(BaseUserManager):
         email = self.normalize_email(email)
         user = self.model(email=email,name=name)
         user.set_password(password)
-        user.save(user=self._db)
+        user.save(using=self._db)
 
         return user
 
     def create_superuser(self,email,name,password):
         """Create a Super User Profile"""
         user = self.create_user(email,name,password)
-
         user.is_superuser = True
         user.is_staff = True
         user.save(using=self._db)
-
         return user
 
 class UserProfile(AbstractBaseUser, PermissionsMixin):
