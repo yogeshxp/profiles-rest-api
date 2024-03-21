@@ -1,0 +1,11 @@
+
+
+ vagrant up - Start a Virtual Machine.
+ vagrant ssh - To connect vagrant ssh server.
+ cd /vagrant - Move to vagrant folder
+ source ~/env/bin/activate - Active the Environment
+
+
+
+
+
